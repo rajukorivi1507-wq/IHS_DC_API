@@ -10,16 +10,22 @@ import in.ashokit.bindings.PlanSelection;
 
 public interface DcService {
 
-	public Map<Integer, String> getPlans();
+	public Long loadCasenum(Intefer appId);
+	public List<String> getPlanNames;
+	public Long savePlanSelection(PlanSelection planselection);
+	public Long saveIncomeData(Income income);
+	public Long saveEducation(Education education);
+	public Long saveChildrens(List<Child> childs);
+	public DcSummary getSummary(Long caseNumber);
+
+
 	
+   ======================================================
+	public Map<Integer, String> getPlans();
 	public boolean savePlanSelection(PlanSelection planSel);
-
 	public boolean saveIncome(Income income);
-
 	public boolean saveEducation(Education education);
-
 	public boolean saveKids(Kids kids);
-
 	public DcSummary fetchSummaryInfo(Long caseNum);
 
 }
