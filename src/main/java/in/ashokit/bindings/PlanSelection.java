@@ -1,12 +1,12 @@
 package in.ashokit.bindings;
 
+@Data 
 public class PlanSelection {
 
-	private Integer caseNum;
+	private Long caseNum;
 
-	private Integer planId;
+	private String planName;
 
-	private Integer userId;
 
 	public Integer getCaseNum() {
 		return caseNum;
