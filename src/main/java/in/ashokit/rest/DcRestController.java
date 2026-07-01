@@ -72,3 +72,53 @@ public class DcRestController {
 	}
 
 }
+
+
+
+
+
+
+
+@RestController
+public class CreatecaseRestController{
+	@Autowired
+	private DcService service;
+
+	@GetMapping("/case/{appId}"})
+	public ResponseEntity<CreateCaseResponse> createCase(@PathVariable Integer appId){
+		Long caseNum = service.loadcaseNum(appId);
+		Map<Integer,String> planMap = service.getPlanNames();
+
+		CreateCaseResponse response = new CreateCaseResponse();
+		response.setCaseNum(caseNum);
+		response.setPlanNames(plansMap);
+
+		return new ReponseEntity<>(response,HttpStatus.OK);
+	}
+}
+
+@RestController
+public class PlanSelectionRestController{
+	@Autowired
+	private DcService service;
+
+	@PostMapping("/plansel)
+	public ResponseEntity<Long> planSelection(@RequestBody PlanSelection plansel){
+		Long caseNum=service.savePlanSelection(planSel);
+		return new ResponseEntity<>(caseNum,HttpStatus.CREATED);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
