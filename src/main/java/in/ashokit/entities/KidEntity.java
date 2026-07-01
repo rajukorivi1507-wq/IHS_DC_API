@@ -1,5 +1,13 @@
 package in.ashokit.entities;
 
-public class KidEntity {
+  @Entity
+  @Table(name="DC_CHILDREN")
+  @Data
+public class DCChildreenEntity {
 
+  @Id
+  @Generatedvalue
+  private Integer childId;
+  private LocalDate dob;
+  private Long childSsn;
 }
